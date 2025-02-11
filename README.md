@@ -1,2 +1,3 @@
-LOJA VIRTUAL 
-Desenvolvendo ______________
+---- LOJA VIRTUAL ----
+
+Em Desenvolvimento 
