@@ -5,7 +5,6 @@ import com.mbpreparacoes.backend.repository.EstadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -19,19 +18,19 @@ public class EstadoService {
         return estadoRepository.findAll();
     }
 
-    public Estado inserir(Estado estado) {
-       Estado estadoSalvo = estadoRepository.saveAndFlush(estado);
+    public Estado inserir(Estado objeto) {
+       Estado estadoSalvo = estadoRepository.saveAndFlush(objeto);
        return estadoSalvo;
     }
 
-    public Estado alterar(Estado estado) {
-        estado.setDataAtualizacao(new Date());
-        return estadoRepository.saveAndFlush(estado);
+    public Estado alterar(Estado objeto) {
+        objeto.setDataAtualizacao(new Date());
+        return estadoRepository.saveAndFlush(objeto);
     }
 
-    public void remover(Long Id) {
-        Estado estado = estadoRepository.findById(Id).get();
-        estadoRepository.delete(estado);
+    public void excluir(Long Id) {
+        Estado objeto = estadoRepository.findById(Id).get();
+        estadoRepository.delete(objeto);
     }
 
 }
