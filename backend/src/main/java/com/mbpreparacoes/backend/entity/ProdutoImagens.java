@@ -1,26 +1,28 @@
 package com.mbpreparacoes.backend.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
 
 @Entity
-@Table(name = "cidade")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Cidade {
+@Table (name = "produto_imagens")
+public class ProdutoImagens {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String nome;
     @ManyToOne
-    @JoinColumn (name = "idEstado")
-    private Estado estado;
+    @JoinColumn(name = "IdProduto")
+    private Produto produto;
+
     private Date dataCriacao;
     private Date dataAtualizacao;
 

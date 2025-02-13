@@ -18,7 +18,8 @@ public class CidadeService {
     }
 
     public Cidade inserir(Cidade objeto) {
-        Cidade cidadeNova = cidadeRepository.save(objeto);
+        objeto.setDataCriacao(new Date());
+        Cidade cidadeNova = cidadeRepository.saveAndFlush(objeto);
         return cidadeNova;
     }
 
