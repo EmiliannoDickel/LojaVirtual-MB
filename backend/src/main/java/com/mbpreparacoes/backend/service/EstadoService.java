@@ -19,8 +19,9 @@ public class EstadoService {
     }
 
     public Estado inserir(Estado objeto) {
-       Estado estadoSalvo = estadoRepository.saveAndFlush(objeto);
-       return estadoSalvo;
+        objeto.setDataCriacao(new Date());
+        Estado estadoSalvo = estadoRepository.saveAndFlush(objeto);
+        return estadoSalvo;
     }
 
     public Estado alterar(Estado objeto) {

@@ -22,12 +22,12 @@ public class EstadoController {
     }
 
     @PostMapping("/")
-    public Estado inserir(Estado objeto) {
+    public Estado inserir(@RequestBody Estado objeto) {
         return estadoService.inserir(objeto);
     }
 
     @PutMapping("/")
-    public Estado alterar(Estado objeto) {
+    public Estado alterar(@RequestBody Estado objeto) {
         return estadoService.alterar(objeto);
     }
 

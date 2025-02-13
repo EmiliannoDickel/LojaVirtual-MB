@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/cidade")
-public class CidadeController {
+public class   CidadeController {
     @Autowired
     private CidadeService cidadeService;
 
@@ -21,12 +21,12 @@ public class CidadeController {
     }
 
     @PostMapping("/")
-    public Cidade inserir(Cidade objeto) {
+    public Cidade inserir(@RequestBody Cidade objeto) {
         return cidadeService.inserir(objeto);
     }
 
     @PutMapping("/")
-    public Cidade alterar(Cidade objeto) {
+    public Cidade alterar(@RequestBody Cidade objeto) {
         return cidadeService.alterar(objeto);
     }
 
