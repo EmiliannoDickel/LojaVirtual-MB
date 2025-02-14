@@ -22,11 +22,6 @@ public class PessoaController {
         return pessoaService.buscarTodas();
     }
 
-//    @PostMapping("/")
-//    public Pessoa inserir (Pessoa objeto) {
-//        return pessoaService.inserir(objeto);
-//    }
-
     @PostMapping("/")
     public ResponseEntity<Pessoa> inserir(@RequestBody Pessoa pessoa) {
         System.out.println("CPF recebido: " + pessoa.getCpf());
@@ -50,6 +45,7 @@ public class PessoaController {
         pessoaService.excluir(id);
         return ResponseEntity.ok().build();
     }
+
 
 
 

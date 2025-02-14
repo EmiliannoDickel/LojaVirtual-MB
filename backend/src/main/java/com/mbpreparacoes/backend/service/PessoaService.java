@@ -40,19 +40,16 @@ public class PessoaService {
 
     public Pessoa inserir(Pessoa objeto) {
         System.out.println("Recebendo objeto: " + objeto);
-
         try {
             if (!cpfValidar.validarCpf(objeto.getCpf())) {
                 throw new IllegalArgumentException("CPF inválido: " + objeto.getCpf());
             }
-
             if (!MailValidar.validarMail(objeto.getEmail())) {
                 throw new IllegalArgumentException("E-mail inválido: " + objeto.getEmail());
             }
             objeto.setDataCriacao(new Date());
             return pessoaRepository.saveAndFlush(objeto);
         } catch (IllegalArgumentException e) {
-            System.out.println("Erro: " + e.getMessage());  // Log para identificar onde ocorreu o erro
             throw e;  // Rethrow para ser capturado no controlador de exceções
         }
     }
