@@ -21,8 +21,8 @@ public class PessoaClienteController {
     @PostMapping("/")
     public ResponseEntity<PessoaClienteRequestDTO> inserir(@RequestBody PessoaClienteRequestDTO pessoaClienteRequestDTO) {
         try {
-            Pessoa pessoaSalva = pessoaService.inserir(pessoaClienteRequestDTO);
-            PessoaClienteRequestDTO responseDTO = new PessoaClienteRequestDTO(pessoaSalva);
+            Pessoa objeto = pessoaService.inserir(pessoaClienteRequestDTO);
+            PessoaClienteRequestDTO responseDTO = new PessoaClienteRequestDTO(objeto);
             return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);

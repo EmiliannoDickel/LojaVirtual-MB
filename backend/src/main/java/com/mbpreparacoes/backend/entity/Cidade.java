@@ -23,5 +23,4 @@ public class Cidade {
     private Estado estado;
     private Date dataCriacao;
     private Date dataAtualizacao;
-
 }

@@ -23,12 +23,12 @@ public class PessoaController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<Pessoa> inserir(@RequestBody Pessoa pessoa) {
-        System.out.println("CPF recebido: " + pessoa.getCpf());
+    public ResponseEntity<Pessoa> inserir(@RequestBody Pessoa objeto) {
+        System.out.println("CPF recebido: " + objeto.getCpf());
 
         try {
-            Pessoa novaPessoa = pessoaService.inserir(pessoa);
-            return ResponseEntity.status(HttpStatus.CREATED).body(novaPessoa);
+            Pessoa novaPessoa = pessoaService.inserir(objeto);
+            return ResponseEntity.status(HttpStatus.CREATED).body(objeto);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }

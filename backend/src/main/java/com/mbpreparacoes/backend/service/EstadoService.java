@@ -18,10 +18,15 @@ public class EstadoService {
         return estadoRepository.findAll();
     }
 
+    public Estado buscarPorId(Long id) {
+        Estado objeto = estadoRepository.findById(id).get();
+        return objeto;
+    }
+
     public Estado inserir(Estado objeto) {
         objeto.setDataCriacao(new Date());
-        Estado estadoSalvo = estadoRepository.saveAndFlush(objeto);
-        return estadoSalvo;
+        Estado objetoSalvo = estadoRepository.saveAndFlush(objeto);
+        return objetoSalvo;
     }
 
     public Estado alterar(Estado objeto) {
