@@ -22,5 +22,4 @@ public class Estado {
     private Date DataCriacao;
     private Date dataAtualizacao;
 
-
 }
