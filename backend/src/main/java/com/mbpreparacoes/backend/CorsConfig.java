@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
                     .allowedOrigins("http://localhost:3000") // Substitua pelo endereço do seu front-end
                     .allowedMethods("GET", "POST", "PUT", "DELETE") // Permita os métodos HTTP que você utiliza
                     .allowedHeaders("*") // Permite todos os cabeçalhos
-                    .allowCredentials(true); // Permite o envio de cookies (se necessário)
+                    .allowCredentials(true); // Permite o envio de cookies
         }
     }
 

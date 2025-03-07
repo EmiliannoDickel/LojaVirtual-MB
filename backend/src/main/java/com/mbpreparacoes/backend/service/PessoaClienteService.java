@@ -20,7 +20,7 @@ public class PessoaClienteService {
     private PessoaClienteRepository pessoaClienteRepository;
 
     @Autowired
-    private PermissaoPessoaService permissaoPessoaService;
+    private PermissaoService permissaoService;
 
     @Autowired
     private CpfValidar cpfValidar;
@@ -42,7 +42,7 @@ public class PessoaClienteService {
             Pessoa pessoa = pessoaClienteRequestDTO.converter(pessoaClienteRequestDTO);
             pessoa.setDataCriacao(new Date());
             Pessoa objetoNovo = pessoaClienteRepository.saveAndFlush(pessoa);
-            permissaoPessoaService.vincularPessoaPermisaoCliente(objetoNovo);
+            permissaoService.vincularPessoaPermissaoCliente(objetoNovo);
             Map<String, Object> proprMap = new HashMap<>();
             proprMap.put("nome", objetoNovo.getNome());
             proprMap.put("mensagem", "Cadastro Realizado Com sucesso!! Em alguns instântes você irá receber sua senha de acesso!");
